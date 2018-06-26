@@ -1,5 +1,3 @@
-// Other techniques for learning
-
 class ActivationFunction {
   constructor(func, dfunc) {
     this.func = func;
@@ -50,12 +48,8 @@ class NeuralNetwork {
       this.bias_h.randomize();
       this.bias_o.randomize();
     }
-
-    // TODO: copy these as well
     this.setLearningRate();
     this.setActivationFunction();
-
-
   }
 
   predict(input_array) {
@@ -136,10 +130,6 @@ class NeuralNetwork {
     this.weights_ih.add(weight_ih_deltas);
     // Adjust the bias by its deltas (which is just the gradients)
     this.bias_h.add(hidden_gradient);
-
-    // outputs.print();
-    // targets.print();
-    // error.print();
   }
 
   serialize() {
@@ -159,20 +149,14 @@ class NeuralNetwork {
     return nn;
   }
 
-
-  // Adding function for neuro-evolution
   copy() {
     return new NeuralNetwork(this);
   }
 
-  // Accept an arbitrary function for mutation
   mutate(func) {
     this.weights_ih.map(func);
     this.weights_ho.map(func);
     this.bias_h.map(func);
     this.bias_o.map(func);
   }
-
-
-
 }

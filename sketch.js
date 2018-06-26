@@ -35,7 +35,7 @@ function mouseClicked() {
 }
 
 function windowResized() {makeCanvas();}
-function pickTextColor() {text_col = [getRandomCol(), getRandomCol(), getRandomCol(), getRandomCol()];}
+function pickTextColor() {text_col = [getRandomCol(), getRandomCol(), getRandomCol(), 255];}
 
 function makeCanvas() {
   createCanvas(windowWidth, windowHeight); 
@@ -126,8 +126,7 @@ function recordData(mx, my) {
     targets = [0, 0, 0, 1];
   }
   
-  trainJarvais(features, targets);
-  
+  trainJarvais(features, targets);  
 }
 
 class Rectangle {
